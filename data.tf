@@ -19,9 +19,8 @@ data "aws_instances" "instances" {
   instance_tags = {
     Name = "${var.COMPONENT}-${var.ENV}"    
   }
+  instance_state_names = ["running"]
 }
 
-output "instances" {
-  value = data.aws_instances.instances
-}
+
 
